@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import layouts from 'express-ejs-layouts';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -18,11 +19,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 //set the directory for EJS templates
 app.set('views', path.join(__dirname, 'views'));
 
-
+//use express-ejs-layouts for layout support
+app.use(layouts);
+app.set('layout', 'layouts/main'); // Set the default layout
 
 
 app.get('/', (req, res) => {
-  res.render('home.ejs');
+  res.render('home', {
+        title: 'Home Page',
+    });
+});
+
+app.get('/posts', (req, res) => {
+  res.render('posts', {
+        layout: 'layouts/blog',
+        title: 'Posts Page',
+    });
 });
 
 app.listen(port, () => {

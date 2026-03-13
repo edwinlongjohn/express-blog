@@ -1,0 +1,285 @@
+
+ 
+
+    <!-- Main Content -->
+  
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Filters & Search Bar (Visual Only) -->
+        <div class="mb-10 flex flex-col sm:flex-row justify-between items-center gap-4 animate-on-scroll">
+            <div class="flex space-x-2 overflow-x-auto pb-2 sm:pb-0 w-full sm:w-auto">
+                <button
+                    class="px-4 py-2 bg-indigo-600 text-white rounded-full text-sm font-medium shadow-sm whitespace-nowrap">All</button>
+                <button
+                    class="px-4 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-sm font-medium hover:bg-slate-50 hover:text-indigo-600 transition-colors whitespace-nowrap">Technology</button>
+                <button
+                    class="px-4 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-sm font-medium hover:bg-slate-50 hover:text-indigo-600 transition-colors whitespace-nowrap">Design</button>
+                <button
+                    class="px-4 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-sm font-medium hover:bg-slate-50 hover:text-indigo-600 transition-colors whitespace-nowrap">Productivity</button>
+            </div>
+            <div class="relative w-full sm:w-72">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <i class="fas fa-search text-slate-400"></i>
+                </div>
+                <input type="text"
+                    class="block w-full pl-10 pr-3 py-2 border border-slate-200 rounded-full leading-5 bg-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    placeholder="Search articles...">
+            </div>
+        </div>
+
+        <!-- Posts Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            <!-- Post Card 1 -->
+            <article
+                class="flex flex-col bg-white rounded-2xl overflow-hidden border border-slate-100 card-hover animate-on-scroll delay-100">
+                <div class="flex-shrink-0 relative overflow-hidden group">
+                    <img class="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&auto=format&fit=crop&w=1679&q=80"
+                        alt="Desk setup">
+                    <div class="absolute top-4 left-4">
+                        <span
+                            class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-white/90 text-indigo-800 backdrop-blur-sm shadow-sm">Technology</span>
+                    </div>
+                </div>
+                <div class="flex-1 p-6 flex flex-col justify-between">
+                    <div class="flex-1">
+                        <a href="#" class="block mt-2">
+                            <h3
+                                class="text-xl font-bold text-slate-900 hover:text-indigo-600 transition-colors line-clamp-2">
+                                The Future of Modern Web Development</h3>
+                            <p class="mt-3 text-base text-slate-500 line-clamp-3">Exploring the shift towards edge
+                                computing, modern frameworks, and how static sites are becoming dynamic powerhouses.
+                            </p>
+                        </a>
+                    </div>
+                    <div class="mt-6 flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <img class="h-10 w-10 rounded-full border-2 border-white shadow-sm"
+                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    alt="Lee">
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-slate-900">Lee Anderson</p>
+                                <div class="flex space-x-1 text-sm text-slate-500">
+                                    <time datetime="2024-03-16">Mar 16</time>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Admin Actions (Edit/Delete placeholder) -->
+                        <div class="flex space-x-2">
+                            <a href="update-post.html"
+                                class="p-2 text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors"
+                                title="Edit Post">
+                                <i class="far fa-edit"></i>
+                            </a>
+                            <button
+                                class="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                                title="Delete Post">
+                                <i class="far fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Post Card 2 -->
+            <article
+                class="flex flex-col bg-white rounded-2xl overflow-hidden border border-slate-100 card-hover animate-on-scroll delay-200">
+                <div class="flex-shrink-0 relative overflow-hidden group">
+                    <img class="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        src="https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1679&q=80"
+                        alt="Abstract UX">
+                    <div class="absolute top-4 left-4">
+                        <span
+                            class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-white/90 text-pink-800 backdrop-blur-sm shadow-sm">Design</span>
+                    </div>
+                </div>
+                <div class="flex-1 p-6 flex flex-col justify-between">
+                    <div class="flex-1">
+                        <a href="#" class="block mt-2">
+                            <h3
+                                class="text-xl font-bold text-slate-900 hover:text-indigo-600 transition-colors line-clamp-2">
+                                Creating Intuitive User Interfaces</h3>
+                            <p class="mt-3 text-base text-slate-500 line-clamp-3">Why less is more when it comes to
+                                UI design. A deep dive into spacing, typography, and micro-interactions that delight
+                                users.</p>
+                        </a>
+                    </div>
+                    <div class="mt-6 flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <img class="h-10 w-10 rounded-full border-2 border-white shadow-sm"
+                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    alt="Lee">
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-slate-900">Lee Anderson</p>
+                                <div class="flex space-x-1 text-sm text-slate-500">
+                                    <time datetime="2024-03-10">Mar 10</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex space-x-2">
+                            <a href="update-post.html"
+                                class="p-2 text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors">
+                                <i class="far fa-edit"></i>
+                            </a>
+                            <button
+                                class="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">
+                                <i class="far fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Post Card 3 -->
+            <article
+                class="flex flex-col bg-white rounded-2xl overflow-hidden border border-slate-100 card-hover animate-on-scroll delay-300">
+                <div class="flex-shrink-0 relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent z-10"></div>
+                    <img class="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1679&q=80"
+                        alt="Coding">
+                    <div class="absolute top-4 left-4 z-20">
+                        <span
+                            class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-white/90 text-purple-800 backdrop-blur-sm shadow-sm">Productivity</span>
+                    </div>
+                </div>
+                <div class="flex-1 p-6 flex flex-col justify-between">
+                    <div class="flex-1">
+                        <a href="#" class="block mt-2">
+                            <h3
+                                class="text-xl font-bold text-slate-900 hover:text-indigo-600 transition-colors line-clamp-2">
+                                Finding Flow in a Hyperconnected World</h3>
+                            <p class="mt-3 text-base text-slate-500 line-clamp-3">Strategies to disconnect, focus
+                                deeply, and produce your best work without falling victim to constant notifications.
+                            </p>
+                        </a>
+                    </div>
+                    <div class="mt-6 flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <img class="h-10 w-10 rounded-full border-2 border-white shadow-sm"
+                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    alt="Lee">
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-slate-900">Lee Anderson</p>
+                                <div class="flex space-x-1 text-sm text-slate-500">
+                                    <time datetime="2024-03-05">Mar 5</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex space-x-2">
+                            <a href="update-post.html"
+                                class="p-2 text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors">
+                                <i class="far fa-edit"></i>
+                            </a>
+                            <button
+                                class="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">
+                                <i class="far fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Post Card 4 -->
+            <article
+                class="flex flex-col bg-white rounded-2xl overflow-hidden border border-slate-100 card-hover animate-on-scroll delay-100">
+                <div class="flex-shrink-0 relative overflow-hidden group">
+                    <img class="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1679&q=80"
+                        alt="Laptop code">
+                    <div class="absolute top-4 left-4">
+                        <span
+                            class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-white/90 text-indigo-800 backdrop-blur-sm shadow-sm">Technology</span>
+                    </div>
+                </div>
+                <div class="flex-1 p-6 flex flex-col justify-between">
+                    <div class="flex-1">
+                        <a href="#" class="block mt-2">
+                            <h3
+                                class="text-xl font-bold text-slate-900 hover:text-indigo-600 transition-colors line-clamp-2">
+                                Mastering CSS Grid</h3>
+                            <p class="mt-3 text-base text-slate-500 line-clamp-3">A comprehensive guide to building
+                                complex two-dimensional layouts using CSS Grid.</p>
+                        </a>
+                    </div>
+                    <div class="mt-6 flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <img class="h-10 w-10 rounded-full border-2 border-white shadow-sm"
+                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    alt="Lee">
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-slate-900">Lee Anderson</p>
+                                <div class="flex space-x-1 text-sm text-slate-500">
+                                    <time datetime="2024-02-28">Feb 28</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex space-x-2">
+                            <a href="update-post.html"
+                                class="p-2 text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors">
+                                <i class="far fa-edit"></i>
+                            </a>
+                            <button
+                                class="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">
+                                <i class="far fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Pagination -->
+        <div
+            class="mt-16 flex items-center justify-between border-t border-slate-200 bg-transparent px-4 py-3 sm:px-6 animate-on-scroll">
+            <div class="flex flex-1 justify-between sm:hidden">
+                <a href="#"
+                    class="relative inline-flex items-center rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">Previous</a>
+                <a href="#"
+                    class="relative ml-3 inline-flex items-center rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">Next</a>
+            </div>
+            <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+                <div>
+                    <p class="text-sm text-slate-700">
+                        Showing <span class="font-medium">1</span> to <span class="font-medium">4</span> of <span
+                            class="font-medium">20</span> results
+                    </p>
+                </div>
+                <div>
+                    <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
+                        <a href="#"
+                            class="relative inline-flex items-center rounded-l-md px-2 py-2 text-slate-400 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0">
+                            <span class="sr-only">Previous</span>
+                            <i class="fas fa-chevron-left h-5 w-5 bg-transparent border-0"></i>
+                        </a>
+                        <!-- Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-slate-900 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:outline-offset-0" -->
+                        <a href="#" aria-current="page"
+                            class="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</a>
+                        <a href="#"
+                            class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-slate-900 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0">2</a>
+                        <a href="#"
+                            class="relative hidden items-center px-4 py-2 text-sm font-semibold text-slate-900 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0 md:inline-flex">3</a>
+                        <span
+                            class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-slate-700 ring-1 ring-inset ring-slate-300 focus:outline-offset-0">...</span>
+                        <a href="#"
+                            class="relative inline-flex items-center rounded-r-md px-2 py-2 text-slate-400 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0">
+                            <span class="sr-only">Next</span>
+                            <i class="fas fa-chevron-right h-5 w-5 bg-transparent border-0"></i>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
