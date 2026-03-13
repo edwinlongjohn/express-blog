@@ -37,6 +37,14 @@ app.get('/posts', (req, res) => {
     });
 });
 
+app.get('/create-post', (req, res) => {
+  res.render('create-post', {
+        layout: 'layouts/post',
+        title: 'Create Post Page',
+    });
+});
+
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
