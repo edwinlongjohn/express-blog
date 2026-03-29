@@ -1,34 +1,56 @@
+<!-- Main Content -->
 
- 
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <!-- Main Content -->
-  
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <!-- Filters & Search Bar (Visual Only) -->
-        <div class="mb-10 flex flex-col sm:flex-row justify-between items-center gap-4 animate-on-scroll">
-            <div class="flex space-x-2 overflow-x-auto pb-2 sm:pb-0 w-full sm:w-auto">
-                <button
-                    class="px-4 py-2 bg-indigo-600 text-white rounded-full text-sm font-medium shadow-sm whitespace-nowrap">All</button>
-                <button
-                    class="px-4 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-sm font-medium hover:bg-slate-50 hover:text-indigo-600 transition-colors whitespace-nowrap">Technology</button>
-                <button
-                    class="px-4 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-sm font-medium hover:bg-slate-50 hover:text-indigo-600 transition-colors whitespace-nowrap">Design</button>
-                <button
-                    class="px-4 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-sm font-medium hover:bg-slate-50 hover:text-indigo-600 transition-colors whitespace-nowrap">Productivity</button>
-            </div>
-            <div class="relative w-full sm:w-72">
-                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <i class="fas fa-search text-slate-400"></i>
-                </div>
-                <input type="text"
-                    class="block w-full pl-10 pr-3 py-2 border border-slate-200 rounded-full leading-5 bg-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                    placeholder="Search articles...">
-            </div>
+    <!-- Filters & Search Bar (Visual Only) -->
+    <div class="mb-10 flex flex-col sm:flex-row justify-between items-center gap-4 animate-on-scroll">
+        <div class="flex space-x-2 overflow-x-auto pb-2 sm:pb-0 w-full sm:w-auto">
+            <button
+                class="px-4 py-2 bg-indigo-600 text-white rounded-full text-sm font-medium shadow-sm whitespace-nowrap">All</button>
+            <button
+                class="px-4 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-sm font-medium hover:bg-slate-50 hover:text-indigo-600 transition-colors whitespace-nowrap">Technology</button>
+            <button
+                class="px-4 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-sm font-medium hover:bg-slate-50 hover:text-indigo-600 transition-colors whitespace-nowrap">Design</button>
+            <button
+                class="px-4 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-sm font-medium hover:bg-slate-50 hover:text-indigo-600 transition-colors whitespace-nowrap">Productivity</button>
         </div>
+        <div class="relative w-full sm:w-72">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <i class="fas fa-search text-slate-400"></i>
+            </div>
+            <input type="text"
+                class="block w-full pl-10 pr-3 py-2 border border-slate-200 rounded-full leading-5 bg-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                placeholder="Search articles...">
+        </div>
+    </div>
 
-        <!-- Posts Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <% if (posts && posts.length > 0) { %>
+    <div class="mb-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <% posts.forEach((post) => { %>
+        <article class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+            <div class="flex items-center justify-between gap-4 mb-3">
+                <span
+                    class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">
+                    <%= post.category?.name || post.category_id %>
+                </span>
+                <span class="text-xs text-slate-500">slug: <%= post.category_id %></span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900"><%= post.title %></h3>
+            <p class="mt-2 text-sm text-slate-600"><%= post.content || 'No content provided.' %></p>
+            <p class="mt-4 text-xs text-slate-500">Author: <%= post.author?.name || 'Unknown' %></p>
+        </article>
+        <% }) %>
+    </div>
+    <% } else { %>
+    <div class="flex justify-center items-center py-12">
+        <h3 class="text-lg">No posts found.</h3>
+    </div>
+    <% } %>
+
+
+    <!-- Posts Grid -->
+    <%#
+       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
             <!-- Post Card 1 -->
             <article
@@ -238,48 +260,48 @@
             </article>
 
         </div>
+       %>
 
-        <!-- Pagination -->
-        <div
-            class="mt-16 flex items-center justify-between border-t border-slate-200 bg-transparent px-4 py-3 sm:px-6 animate-on-scroll">
-            <div class="flex flex-1 justify-between sm:hidden">
-                <a href="#"
-                    class="relative inline-flex items-center rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">Previous</a>
-                <a href="#"
-                    class="relative ml-3 inline-flex items-center rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">Next</a>
+    <!-- Pagination -->
+    <div
+        class="mt-16 flex items-center justify-between border-t border-slate-200 bg-transparent px-4 py-3 sm:px-6 animate-on-scroll">
+        <div class="flex flex-1 justify-between sm:hidden">
+            <a href="#"
+                class="relative inline-flex items-center rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">Previous</a>
+            <a href="#"
+                class="relative ml-3 inline-flex items-center rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">Next</a>
+        </div>
+        <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+            <div>
+                <p class="text-sm text-slate-700">
+                    Showing <span class="font-medium">1</span> to <span class="font-medium">4</span> of <span
+                        class="font-medium">20</span> results
+                </p>
             </div>
-            <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
-                <div>
-                    <p class="text-sm text-slate-700">
-                        Showing <span class="font-medium">1</span> to <span class="font-medium">4</span> of <span
-                            class="font-medium">20</span> results
-                    </p>
-                </div>
-                <div>
-                    <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
-                        <a href="#"
-                            class="relative inline-flex items-center rounded-l-md px-2 py-2 text-slate-400 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0">
-                            <span class="sr-only">Previous</span>
-                            <i class="fas fa-chevron-left h-5 w-5 bg-transparent border-0"></i>
-                        </a>
-                        <!-- Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-slate-900 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:outline-offset-0" -->
-                        <a href="#" aria-current="page"
-                            class="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</a>
-                        <a href="#"
-                            class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-slate-900 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0">2</a>
-                        <a href="#"
-                            class="relative hidden items-center px-4 py-2 text-sm font-semibold text-slate-900 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0 md:inline-flex">3</a>
-                        <span
-                            class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-slate-700 ring-1 ring-inset ring-slate-300 focus:outline-offset-0">...</span>
-                        <a href="#"
-                            class="relative inline-flex items-center rounded-r-md px-2 py-2 text-slate-400 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0">
-                            <span class="sr-only">Next</span>
-                            <i class="fas fa-chevron-right h-5 w-5 bg-transparent border-0"></i>
-                        </a>
-                    </nav>
-                </div>
+            <div>
+                <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
+                    <a href="#"
+                        class="relative inline-flex items-center rounded-l-md px-2 py-2 text-slate-400 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0">
+                        <span class="sr-only">Previous</span>
+                        <i class="fas fa-chevron-left h-5 w-5 bg-transparent border-0"></i>
+                    </a>
+                    <!-- Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-slate-900 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:outline-offset-0" -->
+                    <a href="#" aria-current="page"
+                        class="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</a>
+                    <a href="#"
+                        class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-slate-900 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0">2</a>
+                    <a href="#"
+                        class="relative hidden items-center px-4 py-2 text-sm font-semibold text-slate-900 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0 md:inline-flex">3</a>
+                    <span
+                        class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-slate-700 ring-1 ring-inset ring-slate-300 focus:outline-offset-0">...</span>
+                    <a href="#"
+                        class="relative inline-flex items-center rounded-r-md px-2 py-2 text-slate-400 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0">
+                        <span class="sr-only">Next</span>
+                        <i class="fas fa-chevron-right h-5 w-5 bg-transparent border-0"></i>
+                    </a>
+                </nav>
             </div>
         </div>
-
     </div>
-    
+
+</div>
